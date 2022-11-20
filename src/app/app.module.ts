@@ -17,8 +17,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './component/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
-import { ProductsComponent } from './pages/home/components/products/products.component';
+import { ProductsComponent } from './pages/home/components/products-header/products.component';
 import { FiltersComponent } from './pages/home/components/filters/filters.component';
+import { ProductBoxComponent } from './pages/home/components/product-box/product-box.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FiltersComponent } from './pages/home/components/filters/filters.compon
     HeaderComponent,
     HomeComponent,
     ProductsComponent,
-    FiltersComponent
+    FiltersComponent,
+    ProductBoxComponent
   ],
   imports: [
     BrowserModule,
