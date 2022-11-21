@@ -1,17 +1,17 @@
 <mat-card [ngClass]="{'text-center' : !fullWidthMode}">
-    <div [ngClass]="{flex : fullWidthMode}">
+    <div [ngClass]="{flex : fullWidthMode}" class="drop-shadow-lg">
         <img class="mb-1 mx-auto h-[200px]" 
         [ngClass]="{'h-200px' : !fullWidthMode, 'h-[360px]' : fullWidthMode}"
         src="https://via.placeholder.com/150">
-        <div class="w-full"
+        <div class="w-full drop-shadow-2xl"
             [ngClass]="{'px-8 flex flex-col justify-between' : fullWidthMode}"    
         >
-            <div class="bg-gray-300">
-                <h5>Shoes</h5>
-                <p class="truncate hover:whitespace-normal">Snickers</p>
-                <p *ngIf="fullWidthMode">Description</p>
+            <div class="drop-shadow-md">
+                <h5>Calzado</h5>
+                <p class="truncate hover:whitespace-normal">Zapatillas</p>
+                <p *ngIf="fullWidthMode">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint saepe voluptatum placeat laborum, commodi, tenetur corporis, consequatur iure voluptates porro facere quis magni vitae minima? Provident architecto omnis minima non.</p>
             </div>
-            <div class="flex justify-between bg-gray-300">
+            <div class="flex justify-between drop-shadow-md">
                 <span class="text-red-400">{{ '1500' | currency}}</span>
                 <button>
                     <mat-icon class="text-gray-500">shopping_cart</mat-icon>
