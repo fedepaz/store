@@ -10,7 +10,8 @@
     <mat-menu #menu="matMenu" class="bg-gray-100">
         <div class="p-3 divide-y divide-solid">
             <div class="pb-3 flex justify-between">
-                <span class="mr-16">{{itemsQuantity}} producto</span>
+                <span class="mr-16" *ngIf="itemsQuantity>1" >{{itemsQuantity}} productos</span>
+                <span class="mr-16" *ngIf="itemsQuantity<2" >{{itemsQuantity}} producto</span>
                 <a routerLink="cart">Ir al Carrito</a>
             </div>
             <div  *ngIf="cart.items.length" class="py-3">

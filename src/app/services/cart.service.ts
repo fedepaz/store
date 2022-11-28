@@ -24,8 +24,32 @@ export class CartService {
 
     this.cart.next({ items });
 
-    this._snackBar.open('1 item added to cart.', 'Ok', { duration: 3000 });
-  }
+    this._snackBar.open('1 producto añadido.', 'Ok', { duration: 3000 });
+  };
+
+  removeQuantity(item: CartItem): void {
+    let itemForRemoval: CartItem | undefined;
+    let filteredItems = this.cart.value.items.map(
+      (_item) => {
+        if (_item.id === item.id) {
+          _item.quantity--;
+          if (_item.quantity === 0) {
+            itemForRemoval = _item;
+          }
+        }
+        return _item;
+      });
+    if (itemForRemoval) {
+      filteredItems = this.cart.value.items.filter(
+        (_item) => _item.id !== item.id
+      );
+
+    }
+
+    this.cart.next({ items: filteredItems });
+
+    this._snackBar.open('Ha eliminado un item', 'Ok', { duration: 3000 })
+  };
 
 
   getTotal(items: Array<CartItem>): number {
@@ -38,4 +62,14 @@ export class CartService {
     this.cart.next({ items: [] });
     this._snackBar.open('Ha vaciado el carrito', 'Ok', { duration: 3000 })
   }
+
+  removeFromCart(item: CartItem): void {
+    let filteredItems = this.cart.value.items.filter(
+      (_item) => _item.id !== item.id
+    );
+
+    this.cart.next({ items: filteredItems });
+
+    this._snackBar.open('Ha eliminado el producto', 'Ok', { duration: 3000 })
+  };
 }

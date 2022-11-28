@@ -9,14 +9,7 @@ export class ProductBoxComponent implements OnInit {
 
 
   @Input() fullWidthMode = false;
-  product: Product | undefined = {
-    id: 1,
-    title: 'Zapatillas',
-    price: 1500,
-    category: 'zapatos',
-    description: 'alguna descripción',
-    image: "https://via.placeholder.com/150"
-  };
+  @Input() product: Product | undefined;
 
   @Output() addToCart = new EventEmitter();
 
