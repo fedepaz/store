@@ -34,13 +34,26 @@ export class HomeComponent implements OnInit, OnDestroy {
   productsSubscription: Subscription | undefined;
 
 
+  onItemsCountChange(countNum: number): void {
+    this.count = countNum.toString();
+    this.getProducts();
+  };
+
+  onSortChange(sortString: string): void {
+    this.sort = sortString;
+    console.log(this.sort);
+    this.getProducts();
+  };
+
   onColumnsCountChange(colsNum: number): void {
     this.cols = colsNum;
     this.rowHeight = ROWS_HEIGHT[this.cols];
   }
   onShowCategory(newCategory: string): void {
     this.category = newCategory;
-  }
+    this.getProducts();
+  };
+
   onAddToCart(product: Product): void {
     this.cartService.addToCart({
       product: product.image,
