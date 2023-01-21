@@ -9,8 +9,10 @@
             (showCategory)="onShowCategory($event)">
         </app-filters>
     </mat-drawer>
+    
     <mat-drawer-content 
         class="p-6">
+        
         <app-products 
             (columnsCountChange)="onColumnsCountChange($event)"
             (itemsCountChange)="onItemsCountChange($event)"
